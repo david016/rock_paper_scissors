@@ -3,7 +3,6 @@ let winningChoices = [["rock", "scissors"], ["paper", "rock"], ["scissors", "pap
 let userPoints = 0;
 let computerPoints = 0;
 
-
 function randNum() {
     return Math.floor(Math.random() * 3)
 }
@@ -50,10 +49,6 @@ function win() {
         button.disabled = true;
         button.classList.remove("rps-btns")
     }
-    // rockButton.disabled = true;
-    // paperButton.disabled = true;
-    // scissorsButton.disabled = true;
-
 }
 function loss() {
     looseH1.setAttribute("style", "display:inline");
@@ -73,13 +68,9 @@ function reset() {
         button.disabled = false
         button.classList.add("rps-btns")
     }
-    // rockButton.disabled = false;
-    // paperButton.disabled = false;
-    // scissorsButton.disabled = false;
-
 }
 
-// ! DOM manipulation
+//  DOM manipulation
 let startButton = document.querySelector("#start")
 let rockButton = document.querySelector("#rock")
 let paperButton = document.querySelector("#paper")
@@ -87,7 +78,6 @@ let scissorsButton = document.querySelector("#scissors")
 let rpsButtons = document.querySelectorAll(".rps-btns")
 let pcScore = document.querySelector("td.computer")
 let userScore = document.querySelector("td.user")
-// pcScore.textContent = 1;
 
 rockButton.addEventListener('click', singleRound)
 paperButton.addEventListener('click', singleRound)

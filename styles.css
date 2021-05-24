@@ -13,15 +13,9 @@
   );
   --btn-color: #2ec7e6;
 }
-/* html {
-  height: 100vh;
-} */
+
 body {
-  /* background-image: url(./shoeib-abolhassani-ukDEbYnyDsU-unsplash.jpg); */
   height: 100vh;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   background: var(--main-bg-color);
   background: var(--lin-gradient);
   display: flex;
