@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="container">
+      <div>
+        <button id="start">New game</button>
+        <!-- <button id="reset">Reset</button> -->
+      </div>
+      <h1>Choose one of these:</h1>
+      <div class="buttons">
+        <button id="rock" class="rps-btns" value="rock">Rock</button>
+        <button id="paper" class="rps-btns" value="paper">Paper</button>
+        <button id="scissors" class="rps-btns" value="scissors">
+          Scissors
+        </button>
+      </div>
+      <div class="results">
+        <table>
+          <tr>
+            <th></th>
+            <th>User</th>
+            <th>Computer</th>
+          </tr>
+          <tr>
+            <td>Score</td>
+            <td class="user">0</td>
+            <td class="computer">0</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h1 id="win">You won!</h1>
+        <h1 id="loose">You lost!</h1>
+      </div>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>

@@ -10,20 +10,7 @@ function randNum() {
 
 function computerPlay() {
     let computerChoice = options[randNum()]
-    // console.log(`Computer chose ${computerChoice}`)
     return computerChoice
-}
-
-function userPlay() {
-    let userChoice = (prompt("Choose rock, paper or scissors")).toLowerCase();
-    while (!options.includes(userChoice)) {
-        if (options.includes(userChoice)) {
-            console.log("great")
-        } else {
-            userChoice = (prompt("Choose rock, paper or scissors")).toLowerCase();
-        }
-    }
-    return userChoice
 }
 
 function outcomes(computerChoice, userChoice) {
@@ -35,24 +22,77 @@ function outcomes(computerChoice, userChoice) {
                 if (pair[0] === computerChoice) {
                     console.log(`You loose, ${computerChoice} beats ${userChoice}`)
                     computerPoints++
-                    // return (`You loose, ${computerChoice} beats ${userChoice}`)
+                    pcScore.textContent = computerPoints;
+                    if (computerPoints === 5) {
+                        loss()
+                    }
                 }
                 else {
                     console.log(`You win, ${userChoice} beats ${computerChoice}`)
                     userPoints++
-                    // return (`You win, ${userChoice} beats ${computerChoice}`)
+                    userScore.textContent = userPoints;
+                    if (userPoints === 5) {
+                        win()
+                    }
                 }
             }
         }
     }
 }
 function singleRound() {
-    outcomes(computerPlay(), userPlay())
-    console.log(`${userPoints} : ${computerPoints}`)
+    let userChoice = this.value;
+    outcomes(computerPlay(), userChoice)
+}
+
+function win() {
+    winH1.setAttribute("style", "display:inline");
+    for (let button of rpsButtons) {
+        button.disabled = true;
+        button.classList.remove("rps-btns")
+    }
+    // rockButton.disabled = true;
+    // paperButton.disabled = true;
+    // scissorsButton.disabled = true;
+
+}
+function loss() {
+    looseH1.setAttribute("style", "display:inline");
+    for (let button of rpsButtons) {
+        button.disabled = true;
+        button.classList.remove("rps-btns")
+    }
+}
+function reset() {
+    userPoints = 0;
+    computerPoints = 0;
+    userScore.textContent = "0";
+    pcScore.textContent = "0";
+    looseH1.setAttribute("style", "display:none");
+    winH1.setAttribute("style", "display:none");
+    for (let button of rpsButtons) {
+        button.disabled = false
+        button.classList.add("rps-btns")
+    }
+    // rockButton.disabled = false;
+    // paperButton.disabled = false;
+    // scissorsButton.disabled = false;
 
 }
 
-for (let i = 0; i < 5; i++) {
-    singleRound()
-}
+// ! DOM manipulation
+let startButton = document.querySelector("#start")
+let rockButton = document.querySelector("#rock")
+let paperButton = document.querySelector("#paper")
+let scissorsButton = document.querySelector("#scissors")
+let rpsButtons = document.querySelectorAll(".rps-btns")
+let pcScore = document.querySelector("td.computer")
+let userScore = document.querySelector("td.user")
+// pcScore.textContent = 1;
 
+rockButton.addEventListener('click', singleRound)
+paperButton.addEventListener('click', singleRound)
+scissorsButton.addEventListener('click', singleRound)
+startButton.addEventListener('click', reset)
+
+let winH1 = document.querySelector("#win");
+let looseH1 = document.querySelector("#loose");

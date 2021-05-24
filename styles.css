@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-bg-color: rgb(2, 0, 36);
+  --lin-gradient: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(30, 31, 33, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  --btn-color: #2ec7e6;
+}
+/* html {
+  height: 100vh;
+} */
+body {
+  /* background-image: url(./shoeib-abolhassani-ukDEbYnyDsU-unsplash.jpg); */
+  height: 100vh;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background: var(--main-bg-color);
+  background: var(--lin-gradient);
+  display: flex;
+  justify-content: center;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+}
+h1 {
+  color: white;
+  margin-bottom: 50px;
+}
+
+div.buttons {
+  width: 100vw;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 90px;
+  margin: 5px;
+  height: 50px;
+  background-color: var(--btn-color);
+  border: 3px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+button#start {
+  margin-bottom: 70px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+}
+
+button#start:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+button.rps-btns:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 3px solid black;
+  background-color: var(--btn-color);
+  border-collapse: collapse;
+}
+
+div.results {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+table {
+  width: 300px;
+  height: 100px;
+  margin-bottom: 50px;
+}
+th {
+  width: 33%;
+}
+td {
+  text-align: center;
+}
+
+#win,
+#loose {
+  display: none;
+}
+#win {
+  color: green;
+}
+#loose {
+  color: rgb(126, 1, 1);
+}
+
+@media all and (min-width: 450px) {
+  div.buttons {
+    justify-content: center;
+  }
+
+  button {
+    width: 120px;
+    margin: 10px;
+  }
+  table {
+    width: 400px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  div.buttons {
+    justify-content: center;
+  }
+
+  button {
+    width: 150px;
+    margin: 15px;
+  }
+  table {
+    width: 500px;
+  }
+}
+
+@media all and (max-height: 500px) {
+}
